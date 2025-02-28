@@ -15,22 +15,27 @@
         margin: 0;
         text-align: center;
         padding: 10px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
       }
       .container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: 90%;
+        width: 100%;
+        max-width: 1200px;
         max-height: 600px;
         overflow-y: auto;
         border: 2px solid #ccc;
-        padding: 30px;
+        padding: 20px;
         margin-bottom: 20px;
         box-sizing: border-box;
+        border-radius: 10px;
+        background-color: #fff;
       }
       .tag {
-        width: 180px;
-        height: 50px;
+        width: calc(33.33% - 30px);
+        height: 60px;
         margin: 15px;
         background-color: #ffcc66;
         text-align: left;
@@ -41,6 +46,8 @@
         transition: background-color 0.3s;
         display: flex;
         align-items: center;
+        border-radius: 8px;
+        box-sizing: border-box;
       }
       .tag:hover {
         background-color: #ff9933;
@@ -57,6 +64,7 @@
         border: 2px solid #ccc;
         cursor: pointer;
         transition: background-color 0.3s;
+        border-radius: 8px;
       }
       .big-tag:hover {
         background-color: #ff9933;
@@ -73,6 +81,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
         margin-top: 20px;
+        border-radius: 8px;
       }
       .bottom-tag:hover {
         background-color: #ff9933;
@@ -87,6 +96,7 @@
         align-items: center;
         cursor: pointer;
         transition: background-color 0.3s;
+        border-radius: 4px;
       }
       .checkbox.checked {
         background-color: green;
@@ -127,6 +137,13 @@
         cursor: pointer;
       }
 
+      /* Media Queries for Responsive Design */
+      @media (max-width: 1024px) {
+        .tag {
+          width: calc(50% - 30px);
+        }
+      }
+
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
@@ -134,12 +151,17 @@
           max-height: 400px;
           overflow-y: auto;
         }
-        .tag,
-        .big-tag,
-        .bottom-tag {
-          width: 90%;
-          max-width: 280px;
+        .tag {
+          width: 100%;
           margin: 10px 0;
+        }
+        .big-tag {
+          width: 100%;
+          max-width: 280px;
+        }
+        .bottom-tag {
+          width: 100%;
+          max-width: 220px;
         }
       }
 
@@ -151,6 +173,9 @@
           margin: 5px 0;
         }
         .remark-container {
+          font-size: 14px;
+        }
+        .number {
           font-size: 14px;
         }
       }
@@ -172,23 +197,16 @@
         { name: "Kuru合约交易发币", url: "https://www.kuru.io/markets" },
         { name: "Uni兑换", url: "https://app.uniswap.org/swap" },
         { name: "Curvance借贷", url: "https://app.curvance.com/" },
-        { name: "Owlto部署合约", url: "https://owlto.finance/deploy/" },
         { name: "Meme交易", url: "https://testnet.nad.fun/" },
         { name: "Nostra借贷", url: "https://monad.nostra.finance/" },
-        { name: "Acurast手机挖矿", url: "https://acurast.com/processor/" },
         { name: "Bebop刷交易", url: "https://bebop.xyz/trade?network=monad&sell=MON&buy=WMON" },
         { name: "Chogstars mint NFT", url: "https://testnet.lilchogstars.com/" },
         { name: "Me的NFT", url: "https://magiceden.io/launchpad/monad-testnet/emmy_on_monad" },
-        { name: "Morkie的NFT", url: "https://morkie.xyz/monad" },
         { name: "Aicraft投票", url: "https://aicraft.fun/projects/fizen" },
         { name: "Talentum任务平台", url: "https://monad.talentum.id/projects" },
         {
           name: "Alchemy的NFT",
           url: "https://magiceden.io/mint-terminal/monad-testnet/0x436ee7219bb099f71c9db9c7de8862a9bde891ae",
-        },
-        {
-          name: "Orbiter跨链",
-          url: "https://testnet.orbiter.finance/en?src_chain=11155111&tgt_chain=10143&src_token=ETH",
         },
         { name: "Accountable游戏", url: "https://game.accountable.capital/" },
         {
